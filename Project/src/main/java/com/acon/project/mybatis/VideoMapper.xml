@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="videoComment">
+
+	<sql id="videoColumns">
+		num,admin_id,writer,title,content,fileSize,orgFileName,saveFileName,imgSrc,videoUrl,viewCount,regdate
+	</sql>
+	
+<!-- 
+	<select id="getList" resultType="videoDto">
+		SELECT 	*
+		FROM 	(SELECT result1.*,ROWNUM rnum 
+			  	 FROM (SELECT 	<include refid="videoColumns"/>
+					   FROM 	video_board
+				       ORDER BY num DESC
+				      ) result1
+		     )
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="getCount" resultType="int">
+		SELECT 	NVL(MAX(ROWNUM), 0)
+		FROM 	video_board
+	</select>
+	
+	<insert id="insert" parameterType="videoDto">
+		INSERT INTO video_board
+			(num,admin_id,writer,title,content,orgFileName,saveFileName,fileSize,imgSrc,videoUrl,viewCount,regdate)
+		VALUES(
+			video_board_seq.NEXTVAL,
+			#{admin_id},
+			'관리자',
+			#{title},
+			#{content},
+			#{orgFileName},
+			#{saveFileName},
+			#{fileSize},
+			#{imgSrc},
+			#{videoUrl},
+			0,
+			SYSDATE
+		)
+	</insert>
+	
+	<update id="increaseViewCount" parameterType="int">
+		UPDATE 	video_board
+		SET 	viewCount = viewCount +1
+		WHERE 	num=#{num}
+	</update>
+	
+	<select id="getData" parameterType="int" resultType="videoDto">
+		SELECT 	<include refid="videoColumns"/>
+		FROM 	video_board
+		WHERE 	num=#{num}
+	</select>
+
+-->
+
+</mapper>
+
+
